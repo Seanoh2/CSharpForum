@@ -14,7 +14,6 @@ namespace forumwebsiteCA3.Controllers
         public forumsController()
         {
             _context = new ApplicationDbContext();
-            //test comment
         }
 
         protected override void Dispose(bool disposing)
