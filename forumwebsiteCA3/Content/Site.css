@@ -22,3 +22,42 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#searchArea {
+    width:1000px;
+    height:70px;
+    margin-top:10px; 
+    position:absolute;
+    margin-left:400px;
+}
+
+#search {
+    width: 700px;
+    height:30px;
+    border-radius:10px;
+}
+
+#games {
+    position: absolute;
+    margin-left:10px;
+}
+
+#movies {
+    position: absolute;
+    margin-left: 80px;
+}
+
+#music {
+    position: absolute;
+    margin-left: 150px;
+}
+
+#tech {
+    position: absolute;
+    margin-left:220px;
+}
+
+#sports {
+    position: absolute;
+    margin-left: 290px;
+}
