@@ -1,0 +1,32 @@
+﻿@model IEnumerable<forumwebsiteCA3.Models.posts>
+@{
+    ViewBag.Title = "board";
+}
+
+<table class="table">
+    @foreach (var post in Model)
+    {
+
+    <tr>
+        <td>
+            @Html.ActionLink(post.title, "goToPostById", "posts", new { post.postID }, null)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => post.forumID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => post.isLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => post.score)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => post.postID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => post.userID)
+        </td>
+    </tr>
+
+    }
+

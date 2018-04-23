@@ -23,7 +23,17 @@ namespace forumwebsiteCA3.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var forum = from f in _context.forums select f;
+            return View("allBoards", forum);
         }
+
+        public ActionResult goToBoardById(int forumID)
+        {
+
+            var forum = _context.forums.Where(f => f.forumID == forumID).FirstOrDefault();
+
+            return View("board", forum);
+        }
+
     }
 }

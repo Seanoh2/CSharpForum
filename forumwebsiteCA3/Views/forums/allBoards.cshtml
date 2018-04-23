@@ -1,0 +1,25 @@
+﻿@model IEnumerable<forumwebsiteCA3.Models.forums>
+
+@{
+    ViewBag.Title = "boards";
+}
+
+<h2>All Boards</h2>
+<table class="table">
+
+
+@foreach (var forum in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(@forum.title, "goToBoardById", "forums", new { forum.forumID }, null)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => forum.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => forum.forumID)
+        </td>
+    </tr>
+}
+
+</table>
