@@ -21,10 +21,16 @@ namespace forumwebsiteCA3.Controllers
             _context.Dispose();
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             var post = from p in _context.posts select p;
             return View("board", post);
+        }
+
+        public ActionResult goToPostById(int id)
+        {
+            var post = _context.posts.Where(p => p.postID == id).FirstOrDefault();
+            return View("index", post);
         }
     }
 }

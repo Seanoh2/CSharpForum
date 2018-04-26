@@ -3,30 +3,28 @@
     ViewBag.Title = "board";
 }
 
+<br />
 <table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Rating</th>
+    </tr>
     @foreach (var post in Model)
     {
 
+
     <tr>
         <td>
-            @Html.ActionLink(post.title, "goToPostById", "posts", new { post.postID }, null)
+            @Html.ActionLink(@post.title, "goToPostById", "posts", new { post.postID }, null)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => post.forumID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => post.isLink)
+            @Html.DisplayFor(modelItem => post.content)
         </td>
         <td>
             @Html.DisplayFor(modelItem => post.score)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => post.postID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => post.userID)
-        </td>
     </tr>
 
     }
-
+</table>

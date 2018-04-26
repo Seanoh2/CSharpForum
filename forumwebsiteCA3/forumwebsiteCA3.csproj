@@ -243,6 +243,7 @@
     <Compile Include="Models\moderators.cs" />
     <Compile Include="Models\posts.cs" />
     <Compile Include="Models\user.cs" />
+    <Compile Include="Models\viewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -305,11 +306,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\forums\allBoards.cshtml" />
     <Content Include="Views\forums\board.cshtml" />
+    <Content Include="Views\posts\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\comment\" />
-    <Folder Include="Views\posts\" />
     <Folder Include="Views\users\" />
   </ItemGroup>
   <ItemGroup>

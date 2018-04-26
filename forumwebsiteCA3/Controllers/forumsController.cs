@@ -27,12 +27,12 @@ namespace forumwebsiteCA3.Controllers
             return View("allBoards", forum);
         }
 
-        public ActionResult goToBoardById(int forumID)
+        public ActionResult goToBoardById(int forumid)
         {
 
-            var forum = _context.forums.Where(f => f.forumID == forumID).FirstOrDefault();
+            var post = _context.posts.Where(p => p.forumID == forumid);
 
-            return View("board", forum);
+            return View("board", post);
         }
 
     }
