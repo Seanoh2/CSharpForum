@@ -27,9 +27,9 @@ namespace forumwebsiteCA3.Controllers
             return View("board", post);
         }
 
-        public ActionResult goToPostById(int id)
+        public ActionResult goToPostById(int postid)
         {
-            var post = _context.posts.Where(p => p.postID == id).FirstOrDefault();
+            var post = _context.posts.Where(p => p.postID == postid).FirstOrDefault();
             return View("index", post);
         }
     }
