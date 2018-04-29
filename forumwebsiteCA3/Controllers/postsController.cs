@@ -30,7 +30,11 @@ namespace forumwebsiteCA3.Controllers
         public ActionResult goToPostById(int postid)
         {
             var post = _context.posts.Where(p => p.postID == postid).FirstOrDefault();
-            return View("index", post);
+            var comments = _context.comments.Where(c => c.postID == postid);
+            var viewModel = new commentsPost();
+            viewModel.post = post;
+            viewModel.comments = comments;
+            return View("index", viewModel);
         }
     }
 }

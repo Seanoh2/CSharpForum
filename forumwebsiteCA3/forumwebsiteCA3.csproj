@@ -236,6 +236,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\commentsPost.cs" />
     <Compile Include="Models\comments.cs" />
     <Compile Include="Models\forums.cs" />
     <Compile Include="Models\IdentityModels.cs" />
