@@ -1,75 +1,36 @@
 ﻿@model forumwebsiteCA3.Models.commentsPost
 
-
-<h2>index</h2>
-
 <div>
-    <h4>post</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.post.postID)
-        </dt>
+        
 
-        <dd>
-            @Html.DisplayFor(model => model.post.userID)
-        </dd>
+        <div id="postContainer">
+            <dd>
+                @Html.DisplayFor(model => model.post.title)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.post.forumID)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.post.content)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.post.forumID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.post.isLink)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.post.isLink)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.post.title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.post.title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.post.content)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.post.content)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.post.score)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.post.score)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.post.score)
+            </dd>
+        </div>
 
     </dl>
 
-    <div>
+    
         @foreach (var comment in Model.comments)
-    {
-        @Html.DisplayNameFor(Model => comment.commentID)
-        @Html.DisplayFor(Model => comment.commentID)
+        {
+            <div class="commentContainer">
+                @Html.DisplayFor(Model => comment.content)
+            </div>
+            <br />
+        }
 
-        @Html.DisplayNameFor(model => comment.content)
-        @Html.DisplayFor(Model => comment.content)
-     }
-
-    </div>
-
-</div>
+    
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.post.postID }) |
     @Html.ActionLink("Back to List", "Index")

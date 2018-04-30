@@ -61,3 +61,16 @@ textarea {
     position: absolute;
     margin-left: 290px;
 }
+
+#postContainer {
+    background-color:black;
+    min-width:90%;
+    min-height:10%;
+}
+
+.commentContainer {
+    background-color: black;
+    width: 800px;
+    height: 100px;
+    margin-left:200px;
+}
