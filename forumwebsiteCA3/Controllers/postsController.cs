@@ -31,9 +31,11 @@ namespace forumwebsiteCA3.Controllers
         {
             var post = _context.posts.Where(p => p.postID == postid).FirstOrDefault();
             var comments = _context.comments.Where(c => c.postID == postid);
+            var users = from u in _context.user select u;
             var viewModel = new commentsPost();
             viewModel.post = post;
             viewModel.comments = comments;
+            viewModel.users = users;
             return View("index", viewModel);
         }
     }

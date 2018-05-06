@@ -3,7 +3,7 @@
 <div>
     <hr />
     <dl class="dl-horizontal">
-        
+
 
         <div id="postContainer">
             <dd>
@@ -21,17 +21,23 @@
 
     </dl>
 
-    
-        @foreach (var comment in Model.comments)
-        {
-            <div class="commentContainer">
-                @Html.DisplayFor(Model => comment.content)
-            </div>
-            <br />
-        }
 
-    
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.post.postID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    @foreach (var comment in Model.comments)
+    {
+        <div class="commentContainer">
+            <p class="commentText">@Html.DisplayFor(Model => comment.content)</p>
+        </div>
+    }
+
+    @foreach (var user in Model.users)
+    {
+        if (user.userID == comment.senderID)
+        {
+            <p class="commentAuthor">-@Html.DisplayFor(Model => user.firstName + user.lastName)</p>
+        }
+    }
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.post.postID })
+        @Html.ActionLink("Back to List", "Index")
+    </p>
