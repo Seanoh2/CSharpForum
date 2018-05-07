@@ -6,17 +6,28 @@
 
 
         <div id="postContainer">
-            <dd>
-                @Html.DisplayFor(model => model.post.title)
-            </dd>
+            @if (Model.post.isLink == 0) {
+        <dd>
+            @Html.DisplayFor(model => model.post.title)
+        </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.post.content)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.post.content)
+        </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.post.score)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.post.score)
+        </dd>
+
+        <dd>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.post.postID })
+        </dd>
+} else if ((Model.post.content).Contains("youtube.com")) {
+        <h2 class="postTitle"> @Model.post.title</h2">
+                <br />
+                <br />
+            <center><iframe width="560" height="315" src="@Model.post.content" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+}
         </div>
 
     </dl>
@@ -29,15 +40,10 @@
         </div>
     }
 
-    @foreach (var user in Model.users)
-    {
-        if (user.userID == comment.senderID)
-        {
-            <p class="commentAuthor">-@Html.DisplayFor(Model => user.firstName + user.lastName)</p>
-        }
-    }
+    
 
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.post.postID })
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+        <p>
+            @Html.ActionLink("Add Comment", "addComment", "post")
+            <br />
+            @Html.ActionLink("Back to List", "Index")
+        </p>

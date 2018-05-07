@@ -5,31 +5,28 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace forumwebsiteCA3.Controllers
-{
-    public class postsController : Controller
-    {
+namespace forumwebsiteCA3.Controllers {
+    public class postsController : Controller {
         private ApplicationDbContext _context;
 
-        public postsController()
-        {
+        public postsController() {
             _context = new ApplicationDbContext();
         }
 
-        protected override void Dispose(bool disposing)
-        {
+        protected override void Dispose(bool disposing) {
             _context.Dispose();
         }
 
-        public ActionResult Index(int id)
-        {
+        public ActionResult Index(int id) {
             var post = from p in _context.posts select p;
             return View("board", post);
         }
 
-        public ActionResult goToPostById(int postid)
-        {
+        public ActionResult goToPostById(int postid) {
             var post = _context.posts.Where(p => p.postID == postid).FirstOrDefault();
+            if ((post.content).Contains("youtube.com")){
+                post.content = "https://www.youtube.com/embed/" + (post.content).Substring((post.content).LastIndexOf('=') + 1);
+            }
             var comments = _context.comments.Where(c => c.postID == postid);
             var users = from u in _context.user select u;
             var viewModel = new commentsPost();
@@ -37,6 +34,22 @@ namespace forumwebsiteCA3.Controllers
             viewModel.comments = comments;
             viewModel.users = users;
             return View("index", viewModel);
+        }
+
+        public ActionResult addPost() {
+            posts post1 = new posts();
+            return View(post1);
+        }
+
+        public ActionResult addPostToDB(posts model) {
+            _context.posts.Add(model);
+            _context.SaveChanges();
+
+            return RedirectToAction("postSuccessful", "posts");
+        }
+
+        public ActionResult postSuccessful() {
+            return View("postSuccessful");
         }
     }
 }
