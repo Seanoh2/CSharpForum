@@ -21,6 +21,7 @@
 
         <dd>
             @Html.ActionLink("Edit", "Edit", new { id = Model.post.postID })
+            @Html.ActionLink("Add Comment", "addComment", "comment")
         </dd>
 } else if ((Model.post.content).Contains("youtube.com")) {
         <h2 class="postTitle"> @Model.post.title</h2">
@@ -43,7 +44,7 @@
     
 
         <p>
-            @Html.ActionLink("Add Comment", "addComment", "post")
+            @Html.ActionLink("Add Comment", "addComment", "comment")
             <br />
             @Html.ActionLink("Back to List", "Index")
         </p>

@@ -310,10 +310,11 @@
     <Content Include="Views\posts\index.cshtml" />
     <Content Include="Views\posts\addPost.cshtml" />
     <Content Include="Views\posts\postSuccessful.cshtml" />
+    <Content Include="Views\comment\addComment.cshtml" />
+    <Content Include="Views\comment\commentSuccessful.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\comment\" />
     <Folder Include="Views\users\" />
   </ItemGroup>
   <ItemGroup>

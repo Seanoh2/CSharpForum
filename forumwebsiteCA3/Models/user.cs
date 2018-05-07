@@ -15,6 +15,5 @@ namespace forumwebsiteCA3.Models
         public String email { get; set; }
         public String password { get; set; }
         public bool isAdmin { get; set; }
-
     }
 }
