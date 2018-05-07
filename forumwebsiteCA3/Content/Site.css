@@ -95,3 +95,62 @@ textarea {
 .postTitle {
     text-align:center;
 }
+
+.imgBanner {
+    background-size:cover;
+    background-repeat: no-repeat;
+    height:500px;
+    border-radius:10px;
+    max-width:100%;
+    max-height:100%;
+}
+
+#back-1 {
+    background: url(/Media/gamingBack.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#back-2 {
+    background: url(/Media/techBack.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#back-3 {
+    background: url(/Media/moviesBack.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#back-4 {
+    background: url(/Media/musicBack.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#back-5 {
+    background: url(/Media/sportsBack.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 100%;
+}

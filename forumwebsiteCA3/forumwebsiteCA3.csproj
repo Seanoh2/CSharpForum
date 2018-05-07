@@ -255,7 +255,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\gamingBack.jpg" />
     <Content Include="Media\homeBack.jpg" />
+    <Content Include="Media\moviesBack.jpg" />
+    <Content Include="Media\musicBack.jpg" />
+    <Content Include="Media\sportsBack.jpg" />
+    <Content Include="Media\techBack.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
