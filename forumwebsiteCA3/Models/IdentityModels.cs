@@ -23,7 +23,7 @@ namespace forumwebsiteCA3.Models
         public DbSet<comments> comments { get; set; }
         public DbSet<forums> forums { get; set; }
         public DbSet<posts> posts { get; set; }
-        public DbSet<user> user { get; set; }
+        public DbSet<AspNetUser> AspNetUsers { get; set; }
         public DbSet<moderators> moderators { get; set; }
 
         public ApplicationDbContext()

@@ -9,7 +9,7 @@
 
 <div class="imgBanner" id="back-@id"></div>
 
-<center>@Html.ActionLink("Add post", "addPost", "posts")</center>
+<center>@Html.ActionLink("Add post", "addPost", "posts", new { forumID = Model.FirstOrDefault().forumID}, null)</center>
 <br />
 
 <table class="table">

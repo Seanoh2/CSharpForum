@@ -11,7 +11,7 @@ namespace forumwebsiteCA3.Models
         [Key]
         public int moderatorID { get; set; }
 
-        public int userID { get; set; }
+        public String userID { get; set; }
         public int forumID { get; set; }
 
     }

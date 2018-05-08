@@ -12,7 +12,7 @@ namespace forumwebsiteCA3.Models
         public int commentID { get; set; }
 
         public int postID { get; set; }
-        public int senderID { get; set; }
+        public String senderID { get; set; }
         public DateTime time { get; set; }
         public String content { get; set; }
 

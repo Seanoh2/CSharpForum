@@ -9,6 +9,6 @@ namespace forumwebsiteCA3.Models
     {
         public posts post { get; set; }
         public IEnumerable<comments> comments { get; set; }
-        public IEnumerable<user> users { get; set; }
+        public IEnumerable<AspNetUser> users { get; set; }
     }
 }

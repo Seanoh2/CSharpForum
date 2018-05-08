@@ -1,4 +1,5 @@
 ﻿@model forumwebsiteCA3.Models.commentsPost
+@using Microsoft.AspNet.Identity;
 
 <div>
     <hr />
@@ -20,8 +21,12 @@
         </dd>
 
         <dd>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.post.postID })
-            @Html.ActionLink("Add Comment", "addComment", "comment")
+            @if (Model.post.userID == User.Identity.GetUserId())
+            {
+            @Html.ActionLink("Edit", "Edit", new { postid = Model.post.postID })
+            @Html.ActionLink("Delete", "Delete", new { postid = Model.post.postID })
+            }
+            @Html.ActionLink("Add Comment", "addComment", "comment", new { Model.post.postID },null)
         </dd>
 } else if ((Model.post.content).Contains("youtube.com")) {
         <h2 class="postTitle"> @Model.post.title</h2">
@@ -38,13 +43,18 @@
     {
         <div class="commentContainer">
             <p class="commentText">@Html.DisplayFor(Model => comment.content)</p>
+            @if (comment.senderID == User.Identity.GetUserId())
+            {
+            @Html.ActionLink("Delete", "Delete", "comment", new { commentID = comment.commentID }, null)
+            @Html.ActionLink("Edit", "Edit", "comment", new { commentID = comment.commentID }, null)
+            }
         </div>
     }
 
     
 
         <p>
-            @Html.ActionLink("Add Comment", "addComment", "comment")
+            @Html.ActionLink("Add Comment", "addComment", "comment", new {Model.post.postID}, null)
             <br />
             @Html.ActionLink("Back to List", "Index")
         </p>

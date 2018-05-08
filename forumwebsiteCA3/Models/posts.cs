@@ -11,7 +11,7 @@ namespace forumwebsiteCA3.Models
         [Key]
         public int postID { get; set; }
 
-        public int userID { get; set; }
+        public String userID { get; set; }
         public int forumID { get; set; }
         public int isLink { get; set; }
         public String title { get; set; }
